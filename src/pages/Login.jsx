@@ -11,6 +11,7 @@ import {
   validateIndianPhone,
   validatePassword,
 } from '../components/ui'
+import Footer from '../components/Footer'
 
 export default function Login() {
   const { session, profile, signIn, signUp } = useAuth()
@@ -78,8 +79,9 @@ export default function Login() {
   }
 
   return (
-    <div className="flex min-h-screen items-center justify-center bg-slate-50 px-4 py-10">
-      <div className="w-full max-w-md space-y-6">
+    <div className="flex min-h-screen flex-col justify-between bg-slate-50">
+      <div className="flex flex-1 items-center justify-center px-4 py-10">
+        <div className="w-full max-w-md space-y-6">
         <div className="text-center">
           <div className="mx-auto mb-3 flex h-13 w-13 items-center justify-center rounded-2xl bg-teal-600 text-2xl font-bold text-white shadow-md">
             +
@@ -182,5 +184,7 @@ export default function Login() {
         </p>
       </div>
     </div>
+    <Footer />
+  </div>
   )
 }

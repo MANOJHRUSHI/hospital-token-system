@@ -1,5 +1,6 @@
 import { useAuth } from '../context/AuthContext'
 import { RoleBadge } from './ui'
+import Footer from './Footer'
 
 const ROLE_LABEL = {
   patient: 'Patient',
@@ -12,7 +13,7 @@ export default function Layout({ title, live, children }) {
   const { profile, signOut } = useAuth()
 
   return (
-    <div className="min-h-screen bg-[#f8fafc] text-slate-800">
+    <div className="flex min-h-screen flex-col bg-[#f8fafc] text-slate-800">
       <header className="sticky top-0 z-20 border-b border-slate-200/80 bg-white/95 backdrop-blur-md">
         <div className="mx-auto flex max-w-6xl items-center justify-between gap-4 px-4 py-3">
           <div className="flex items-center gap-3">
@@ -46,7 +47,8 @@ export default function Layout({ title, live, children }) {
           </div>
         </div>
       </header>
-      <main className="mx-auto max-w-6xl space-y-6 px-4 py-6">{children}</main>
+      <main className="mx-auto w-full max-w-6xl flex-1 space-y-6 px-4 py-6">{children}</main>
+      <Footer />
     </div>
   )
 }
